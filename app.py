@@ -33,7 +33,7 @@ type=['jpg', 'png', 'jpeg'])
     if image_file is not None:
         # Load and display the image
         image = load_image(image_file)
-        st.image(image, caption='Uploaded Image', use_column_width=True)
+        st.image(image, caption='Uploaded Image', use_container_width=True)
 
         # Make prediction
         if st.button("Detect"):
