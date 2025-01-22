@@ -1,9 +1,3 @@
-
-Here is the modified code with colors added using Python:
-
-
-import streamlit
-import tensorflow
 import streamlit as st
 from PIL import Image
 import numpy as np
@@ -73,5 +67,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
