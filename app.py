@@ -42,7 +42,7 @@ def main():
     st.write("This is a Deep Learning application to detect skin diseases from images.")
 
     # Upload image
-    image_file = st.file_uploader("Upload an image of the skin lesion", type=['jpg', 'png', 'jpeg'])
+    image_file = st.file_uploader("Upload an image of the skin disease", type=['jpg', 'png', 'jpeg'])
 
     if image_file is not None:
         # Load and display the image
@@ -56,6 +56,7 @@ def main():
 
             # Display required medicines one by one
             medicine_list = medicines[prediction]
+            st.success(f"you have to use this medicines and ointments")
             for i, medicine in enumerate(medicine_list):
                 st.write(f"Medicine {i+1}: {medicine}")
 
