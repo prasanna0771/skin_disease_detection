@@ -11,15 +11,15 @@ labels = ['Actinic Keratosis', 'Atopic Dermatitis','Squamous Cell Carcinoma', 'B
 
 # Dictionary of skin diseases and their required medicines
 medicines = {
-    'Actinic Keratosis': 'Imiquimod cream, Fluorouracil cream, Ingenol mebutate gel',
-    'Atopic Dermatitis': 'Topical corticosteroids, Topical immunomodulators, Oral antihistamines',
-    'Squamous Cell Carcinoma': 'Surgical excision, Mohs surgery, Radiation therapy, Chemotherapy',
-    'Benign Keratosis': 'Cryotherapy, Cantharidin, Salicylic acid, Urea cream',
-    'Dermatofibroma': 'Surgical excision, Cryotherapy, Intralesional steroid injections',
-    'Melanoma': 'Surgical excision, Immunotherapy, Targeted therapy, Chemotherapy',
-    'Melanocytic Nevus': 'Surgical excision, Laser therapy, Cryotherapy',
-    'Vascular Lesion': 'Laser therapy, Sclerotherapy, Surgical excision',
-    'Tinea Ringworm Candidiasis': 'Topical antifungals, Oral antifungals, Antifungal creams'
+    'Actinic Keratosis': ['Imiquimod cream', 'Fluorouracil cream', 'Ingenol mebutate gel'],
+    'Atopic Dermatitis': ['Topical corticosteroids', 'Topical immunomodulators', 'Oral antihistamines'],
+    'Squamous Cell Carcinoma': ['Surgical excision', 'Mohs surgery', 'Radiation therapy', 'Chemotherapy'],
+    'Benign Keratosis': ['Cryotherapy', 'Cantharidin', 'Salicylic acid', 'Urea cream'],
+    'Dermatofibroma': ['Surgical excision', 'Cryotherapy', 'Intralesional steroid injections'],
+    'Melanoma': ['Surgical excision', 'Immunotherapy', 'Targeted therapy', 'Chemotherapy'],
+    'Melanocytic Nevus': ['Surgical excision', 'Laser therapy', 'Cryotherapy'],
+    'Vascular Lesion': ['Laser therapy', 'Sclerotherapy', 'Surgical excision'],
+    'Tinea Ringworm Candidiasis': ['Topical antifungals', 'Oral antifungals', 'Antifungal creams']
 }
 
 # Function to load and preprocess the image
@@ -53,9 +53,15 @@ def main():
         if st.button("Detect"):
             prediction = make_prediction(image)
             st.success(f"The predicted skin disease is: {prediction}")
-            st.write(f"Required medicines: {medicines[prediction]}")
+
+            # Display required medicines one by one
+            medicine_list = medicines[prediction]
+            for i, medicine in enumerate(medicine_list):
+                st.write(f"Medicine {i+1}: {medicine}")
 
 if __name__ == "__main__":
     main()
+
+
 
        
