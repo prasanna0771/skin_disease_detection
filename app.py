@@ -1,3 +1,6 @@
+Here is the modified code:
+
+
 import streamlit
 import tensorflow
 import streamlit as st
@@ -53,16 +56,12 @@ def main():
         if st.button("Detect"):
             prediction = make_prediction(image)
             st.success(f"The predicted skin disease is: {prediction}")
-
+            st.success("Please use the following medicines and ointments for better results:")
+            
             # Display required medicines one by one
             medicine_list = medicines[prediction]
-            st.success(f"you have to use this medicines and ointments")
             for i, medicine in enumerate(medicine_list):
                 st.write(f"Medicine {i+1}: {medicine}")
 
 if __name__ == "__main__":
     main()
-
-
-
-       
