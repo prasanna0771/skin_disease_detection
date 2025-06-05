@@ -1,15 +1,7 @@
-<<<<<<< HEAD
+streamlit
 tensorflow
 pandas
-scikit-learn
 numpy
 matplotlib
-streamlit
-=======
-tensorflow
-pandas
 scikit-learn
 numpy
-matplotlib
-streamlit
->>>>>>> 00776cc (push)
